@@ -25,7 +25,7 @@ const TaskForm = ({ addTask }) => {
       <h2>Add New Task</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Title:</label>
+          <label>Task-Title:</label>
           <input
             type="text"
             value={title}
@@ -34,7 +34,7 @@ const TaskForm = ({ addTask }) => {
           />
         </div>
         <div>
-          <label>Description:</label>
+          <label> Task-Description:</label>
           <input
             type="text"
             value={description}
