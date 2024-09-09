@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     // Fetch tasks from backend
     axios
-      .get("http://localhost:5000/tasks")
+      .get("http://localhost:3333/tasks")
       .then((response) => {
         setTasks(response.data);
         setLoading(false);

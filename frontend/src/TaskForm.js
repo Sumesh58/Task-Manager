@@ -11,7 +11,7 @@ const TaskForm = ({ addTask }) => {
     const newTask = { title, description };
 
     axios
-      .post("http://localhost:5000/tasks", newTask)
+      .post("http://localhost:3333/tasks", newTask)
       .then((response) => {
         addTask(response.data);
         setTitle("");

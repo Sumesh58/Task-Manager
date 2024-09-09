@@ -4,7 +4,7 @@ import axios from "axios";
 const TaskList = ({ tasks, deleteTask }) => {
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/tasks/${id}`)
+      .delete(`http://localhost:3333/tasks/${id}`)
       .then(() => deleteTask(id))
       .catch((error) => console.log("Error deleting task:", error));
   };

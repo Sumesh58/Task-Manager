@@ -5,14 +5,14 @@ const bodyParser = require('body-parser');
 require('dotenv').config();  // Load .env file
 
 const app = express();
-const PORT = 5000;
+const PORT = 3333;
 app.use(express.json(express.urlencoded))
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
 // Get MongoDB URL from .env
-const mongodb = process.env.MONGODB-URL;  // Use underscore (_) instead of dash (-)
+const mongodb = process.env.MONGODB_URL;  // Use underscore (_) instead of dash (-)
 
 // Check if MongoDB URL is properly loaded from the .env file
 
