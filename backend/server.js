@@ -1,28 +1,26 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-require('dotenv').config();  // Load .env file
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+require("dotenv").config(); // Load .env file
 
 const app = express();
 const PORT = 3333;
-app.use(express.json(express.urlencoded))
+app.use(express.json(express.urlencoded));
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
 // Get MongoDB URL from .env
-const mongodb = process.env.MONGODB_URL;  // Use underscore (_) instead of dash (-)
+const mongodb = process.env.MONGODB_URL; // Use underscore (_) instead of dash (-)
 
 // Check if MongoDB URL is properly loaded from the .env file
 
-
 // MongoDB Connection
 mongoose
-  .connect('mongodb+srv://sumeshmakhija:sumesh@cluster0.zt1oh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+  .connect(`${mongodb}`)
   .then(() => console.log("MongoDB connected successfully"))
   .catch((error) => console.log("MongoDB connection error:", error));
-
 
 // Task Schema
 const TaskSchema = new mongoose.Schema({
